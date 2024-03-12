@@ -1,28 +1,30 @@
 <!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Office JavaScript API -->
-        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-        <script type="text/javascript" src="taskpane.js"></script>
-        <link rel="stylesheet" href="style.css?v=1.0">
-    </head>
-	<body style="margin: 0">
 
-        <h1> Power App </h1>
+<head>
+	<!-- Office JavaScript API -->
+	<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+	<script type="text/javascript" src="taskpane.js"></script>
+	<link rel="stylesheet" href="style.css?v=1.0">
+</head>
 
-		<iframe id="contentFrame" style="display: block; width: 100vw; height: 100vh; border: none">
-			<strong>Loading ... </strong>
-			<img src="assets/icon-64.png" alt="A&0 Compass" />
-		</iframe>
-		
-		<script>
-			Office.onReady((info) => {
-				const appUrl = "https://org3242bd58.crm4.dynamics.com/main.aspx?appid=440231c0-6661-ee11-8def-000d3ab1b45d&pagetype=entitylist&etn=cr379_newtable&viewid=34a24983-67d1-4f91-9246-5c611fcf6758&viewType=1039" 
-				
-				document. getElementById("contentFrame").src = appUrl;
-			});
-		</script>
-	</body>
+<body style="margin: 0">
+
+	<h1> Power App </h1>
+
+	<iframe id="contentFrame" style="display: block; width: 100vw; height: 100vh; border: none">
+		<strong>Loading ... </strong>
+		<img src="assets/icon-64.png" alt="A&0 Compass" />
+	</iframe>
+
+	<script>
+		Office.onReady((info) => {
+			const appUrl = "https://org3242bd58.crm4.dynamics.com/main.aspx?appid=440231c0-6661-ee11-8def-000d3ab1b45d&pagetype=entitylist&etn=cr379_newtable&viewid=34a24983-67d1-4f91-9246-5c611fcf6758&viewType=1039"
+
+			document.getElementById("contentFrame").src = appUrl;
+		});
+	</script>
+</body>
 
 </html>
