@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@azure/msal-browser@2.35.0/lib/msal-browser.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Timer</p>
+    <p id="timer">00:00:00</p>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+    <button id="resetButton">Reset</button>
+    <br>
+    <p>--------------------</p>
+    <p>Clock</p>
+    <p id="clock">00:00:00</p>
+    <p>--------------------</p>
+    <button id="getTokenButton">get Token (MSAL)</button>
+    <p id="authStatusLabel">Status: Not Signed In</p>
+    <p>--------------------</p>
+    <button id="closeButton">Close</button>
+    <br>
+    <script type="text/javascript" src="myDialog.js"></script>
+</body>
+
+</html>
