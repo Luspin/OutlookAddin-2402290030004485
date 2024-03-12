@@ -2,10 +2,10 @@ Office.onReady((info) => {
     console.log("Office.onReady called");
     if (info.host === Office.HostType.Outlook) {
         document.getElementById("helloButton").onclick = sayHello;
-        document.getElementById("displayDialogAsyncButton").onclick = openDialog;
-        document.getElementById("openBrowserWindowButton").onclick = openBrowserWindow;
-        document.getElementById("syncMessageButton").onclick = syncMessage;
-        document.getElementById("sendMessageButtonGraph").onclick = sendMessageGraph;
+        // document.getElementById("displayDialogAsyncButton").onclick = openDialog;
+        // document.getElementById("openBrowserWindowButton").onclick = openBrowserWindow;
+        // document.getElementById("syncMessageButton").onclick = syncMessage;
+        // document.getElementById("sendMessageButtonGraph").onclick = sendMessageGraph;
 
         console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.13")));
 
