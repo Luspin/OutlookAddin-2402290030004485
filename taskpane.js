@@ -1,7 +1,7 @@
 Office.onReady((info) => {
     console.log("Office.onReady called");
     if (info.host === Office.HostType.Outlook) {
-        document.getElementById("helloButton").onclick = sayHello;
+        // document.getElementById("helloButton").onclick = sayHello;
         // document.getElementById("displayDialogAsyncButton").onclick = openDialog;
         // document.getElementById("openBrowserWindowButton").onclick = openBrowserWindow;
         // document.getElementById("syncMessageButton").onclick = syncMessage;
