@@ -7,10 +7,16 @@
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides"
   xsi:type="MailApp">
   <Id>fc188889-7206-4d15-9968-7a4966f7f4ca</Id>
-  <Version>1.0.0.2</Version>
+  <Version>1.0.0.3</Version>
   <ProviderName>Microsoft Outlook Dev Center</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Add-in Command Demo" />
+    <AppDomains>
+      <!-- Lists any domains, in addition to the domain specified in the "SourceLocation" element,
+    that your Office Add-in will use and that should be trusted by Office. -->
+    <AppDomain>https://org3242bd58.crm4.dynamics.com</AppDomain>
+    <AppDomain>https://login.microsoftonline.com</AppDomain>
+  </AppDomains>
   <Description DefaultValue="Adds command buttons to the ribbon in Outlook"/>
   <IconUrl DefaultValue="https://luspin.github.io/OutlookAddin-2402290030004485/assets/icon-80.png" />
   <HighResolutionIconUrl DefaultValue="https://luspin.github.io/OutlookAddin-2402290030004485/assets/icon-80.png" />
