@@ -5,26 +5,21 @@
 <head>
 	<!-- Office JavaScript API -->
 	<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-	<script type="text/javascript" src="taskpane.js"></script>
-	<link rel="stylesheet" href="style.css?v=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body style="margin: 0">
-
-	<h1> Power App </h1>
-
 	<iframe id="contentFrame" style="display: block; width: 100vw; height: 100vh; border: none">
-		<strong>Loading ... </strong>
-		<img src="assets/icon-64.png" alt="A&0 Compass" />
+	  <strong>Loading... </strong>
+	  <img src="assets/icon-64.png" alt="A&O Compass" />
 	</iframe>
-
+  
 	<script>
-		Office.onReady((info) => {
-			const appUrl = "https://learn.microsoft.com/en-us/javascript/api/manifest?view=outlook-js-1.13#elements"
-
-			document.getElementById("contentFrame").src = appUrl;
-		});
+	  Office.onReady((info) => {
+		const appUrl = "https://apps.powerapps.com/play/e/08ff6876-0225-efa7-8110-275146e222ab/a/9949b9e6-790b-4046-afde-6e634297ed78?tenantId=7f0b44d2-04f8-4672-bf5d-4676796468a3&hidenavbar=true&id=00000000-0000-0000-0000-000000000000&id=00000000-0000-0000-0000-000000000000"
+		document.getElementById("contentFrame").src = appUrl;
+	  });
 	</script>
-</body>
+  </body>
 
 </html>
