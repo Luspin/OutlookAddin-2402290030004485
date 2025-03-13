@@ -1,0 +1,63 @@
+<OfficeApp
+        xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+        xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="MailApp">
+    <Id>332980cc-1e81-40e8-9e69-7cd1b4db3756</Id>
+    <Version>1.0.0</Version>
+    <ProviderName>ASDF</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="Accidental Data Exposure"/>
+    <Description DefaultValue="Accidental Data Exposure"/>
+    <Hosts>
+        <Host Name="Mailbox"/>
+    </Hosts>
+    <Requirements>
+        <Sets>
+            <Set Name="MailBox" MinVersion="1.1"/>
+        </Sets>
+    </Requirements>
+    <FormSettings>
+        <Form xsi:type="ItemRead">
+            <DesktopSettings>
+				<SourceLocation DefaultValue="https://ade-plugin-staging.s3.amazonaws.com/ade/functions.html" />
+				<RequestedHeight>100</RequestedHeight>
+            </DesktopSettings>
+        </Form>
+    </FormSettings>
+    <Permissions>ReadWriteMailbox</Permissions>
+    <Rule xsi:type="RuleCollection" Mode="Or">
+        <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" IncludeSubClasses="true"/>
+    </Rule>
+    <DisableEntityHighlighting>false</DisableEntityHighlighting>
+    <VersionOverrides
+            xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
+            xsi:type="VersionOverridesV1_0">
+        <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+                          xsi:type="VersionOverridesV1_1">
+            <Hosts>
+                <Host xsi:type="MailHost">
+                    <DesktopFormFactor>
+                        <SupportsSharedFolders>true</SupportsSharedFolders>
+                        <FunctionFile resid="function-file-url"/>
+                        <ExtensionPoint xsi:type="Events">
+                            <Event Type="ItemSend" FunctionExecution="synchronous"
+                FunctionName="handleItemSend" />
+                        </ExtensionPoint>
+                    </DesktopFormFactor>
+                </Host>
+            </Hosts>
+            <Resources>
+                <bt:Images>
+                </bt:Images>
+                <bt:Urls>
+          <bt:Url id="function-file-url"
+            DefaultValue="https://ade-plugin-staging.s3.amazonaws.com/ade/functions.html" />
+                </bt:Urls>
+                <bt:ShortStrings>
+                    <bt:String id="add-in-label" DefaultValue="Accidental Data Exposure"/>
+                </bt:ShortStrings>
+            </Resources>
+        </VersionOverrides>
+    </VersionOverrides>
+</OfficeApp>

@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <title>No UI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script>
+        START_TIME = (new Date()).getTime()
+
+        function timedLog(s) {
+            let total_ms = ((new Date()).getTime() - START_TIME);
+            console.log(`Timed log (${total_ms}ms) ${s}`);
+        }
+        timedLog("Start log");
+
+        function handleItemSend(e) {
+            timedLog("start handleItemSend");
+            const mailboxItem = Office.context.mailbox.item;
+            getItemId(mailboxItem).then(itemId => {
+                timedLog(`item ID: ${JSON.stringify(itemId)}`)
+                e.completed({ allowEvent: true });
+                timedLog("Call complete, send email")
+            })
+        }
+
+        function getAttachments(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.getAttachmentsAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getRecipients(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.to.getAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getBody(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.body.getAsync("text", {}, function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getSender(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.from.getAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getSubject(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.subject.getAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getCC(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.cc.getAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getBCC(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.bcc.getAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        function getItemId(mailboxItem) {
+            return new Office.Promise(function (resolve, reject) {
+                mailboxItem.saveAsync(function (asyncResult) {
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        reject(asyncResult.error);
+                    } else {
+                        resolve(asyncResult.value);
+                    }
+                });
+            });
+        }
+
+        Office.initialize = function () {}
+        timedLog("Finish loading definitions");
+    </script>
+</head>
+
+<body>
+This page is left blank intentionally.
+</body>
+
+</html>
