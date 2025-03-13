@@ -3,12 +3,12 @@
         xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:type="MailApp">
-    <Id>332980cc-1e81-40e8-9e69-7cd1b4db3756</Id>
+    <Id>332970cc-1e81-40e8-9e69-7cd1b4db3756</Id>
     <Version>1.0.0</Version>
-    <ProviderName>ASDF</ProviderName>
+    <ProviderName>Luspin</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
-    <DisplayName DefaultValue="Accidental Data Exposure"/>
-    <Description DefaultValue="Accidental Data Exposure"/>
+    <DisplayName DefaultValue="ItemSend2503050050004705"/>
+    <Description DefaultValue="ItemSend2503050050004705"/>
     <Hosts>
         <Host Name="Mailbox"/>
     </Hosts>
@@ -20,7 +20,7 @@
     <FormSettings>
         <Form xsi:type="ItemRead">
             <DesktopSettings>
-				<SourceLocation DefaultValue="https://ade-plugin-staging.s3.amazonaws.com/ade/functions.html" />
+				<SourceLocation DefaultValue="https://raw.githubusercontent.com/Luspin/OutlookAddin-2402290030004485/refs/heads/main/functions.html" />
 				<RequestedHeight>100</RequestedHeight>
             </DesktopSettings>
         </Form>
@@ -52,10 +52,10 @@
                 </bt:Images>
                 <bt:Urls>
           <bt:Url id="function-file-url"
-            DefaultValue="https://ade-plugin-staging.s3.amazonaws.com/ade/functions.html" />
+            DefaultValue="https://raw.githubusercontent.com/Luspin/OutlookAddin-2402290030004485/refs/heads/main/functions.html" />
                 </bt:Urls>
                 <bt:ShortStrings>
-                    <bt:String id="add-in-label" DefaultValue="Accidental Data Exposure"/>
+                    <bt:String id="add-in-label" DefaultValue="ItemSendTest"/>
                 </bt:ShortStrings>
             </Resources>
         </VersionOverrides>
